@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>   
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XxCoolClicker!(timed)xX</title>
+    </head>
+
+    </style>
+    <body style="background-color: grey;"><center>
+
+
+        <style>
+            h1{ 
+                text-align: center;
+            }
+            .button {
+                border: none;
+                color: rgb(0, 0, 0);
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                border: 2px solid #008CBA;
+                }
+                .button:hover {
+                    background-color: #008CBA;
+                    color: white;
+                    }
+            .button2 {
+                border: none;
+                color: rgb(0, 0, 0);
+                padding: 16px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                border: 2px solid #ba1600;
+                }
+                .button2:hover {
+                    background-color: #ba1600;
+                    color: white;
+                    }
+        
+        
+            .navbar ul{
+                list-style-type: none;
+                background-color: hsl(0, 1%, 26%) ;
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+            }
+            .navbar a{
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+            .navbar a.hover{
+                background-color: hsl(0, 1%, 10%) ;
+                
+            }
+            .navbar li{
+                float: left;
+        
+                
+            }
+            img{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-width: 5px; 
+                border-style: solid;
+                border-color: #333;
+                max-width: 50%; 
+                height: auto;
+            }
+            img2{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-width: 5px; 
+                border-style: solid;
+                border-color: #333;
+                max-width: 50%; 
+                height: auto;
+            }
+            body{
+                margin: 0px;
+        
+            }
+            main{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            footer {
+                clear: both;
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                margin-top: 20px;
+                
+            }
+        </style>
+        
+        
+
+        <main><center>
+            <h1 style="color: yellow;">CoolClicker!</h1>
+            
+            <h2 style="color: yellow;">Welcome to Cool Clicker! While the concept isnt new, we're trying to keep it somewhat relivent.<br> 
+            Click the button below to attack the dark lord himself, rack up levels, and have fun! </h2>
+
+            <nav class ="navbar">
+                <ul>
+                    <li><a href = "CoolClicker1.1.html">Classic</a></li>
+                    <li><a href="timed.html">Timed</a></li>
+                    <li><a href = "timedCompetition.html">COmpetitive</a></li>
+                    <li><a href = "newCelebrity.html">New Creature</a></li>
+                </ul>
+            </nav>
+            
+            <img src = "age?q=tbn:ANd9GcSC5dHXTqKJqX5YeHlzNtNAXWv2owk3fLLBtUOl_CBvnhBLEZiavi1KVYa-Q-6WSpzxVtgbOVZDdXJqi9M" alt = "EdSheeran" width = "500" height = "300"><center>
+
+
+            <p style="color: red;">Damage Dealt: <span id = "counter">0</span></p>
+            <p style="color: blue;">Level: <span id = "level">0</span></p>
+            
+            <p class = "time">
+                <span id = "minutes">00</span>: <span id ="seconds">00</span> : <span id = tens>00</span>
+            </p>
+            <button id= "start">Start</button>       
+            <button id ="stop">Stop</button>
+            <button id = "reset">Reset</button>
+
+            <button onclick = "damageCounter()">Attack!</button>
+
+
+
+            <script>
+                let count = 0;
+                let lvl =1;
+
+                function damageCounter(){
+                    count++;
+
+                    if (count == lvl*10){
+                        //alert("Level up!"); removed to allow smoother use under pressure
+                        lvl++;
+                        count=0;
+                    }
+                    document.getElementById('counter').innerText =count;
+                    document.getElementById('level').innerText = lvl;
+                }
+
+                window.onload = function stopwatch(){
+                    let minutes =0;
+                    let secondss = 0;
+                    let tens =0o0;
+                    let appendMinutes = document.querySelector('#minutes');
+                    let appendTens = document.querySelector('#tens');
+                    let appendSeconds = document.querySelector('#seconds');
+
+                    let startBtn = document.querySelector('#start');
+                    let stopBtn = document.querySelector('#stop');
+                    let rstBtn = document.querySelector('#reset');
+
+                    let Interval;
+                    const startTimer = () =>{
+                        //TENS
+                        tens++;
+                        if (tens <=9){
+                            appendTens.innerHTML = '0' + tens;
+                        }
+                        if(tens > 9){
+                            appendTens.innerHTML = tens;
+                        }
+                        if (tens > 99){
+                            seconds ++;
+                            appendSeconds.innerHTML = '0' + seconds;
+                            tens =0;
+                            appendTens.innerHTML = '0' + 0;
+                        }
+                        //SECONDS
+                        if(seconds > 9){
+                            appendSeconds.innerHTML = seconds;
+                        }
+                        if(seconds>59){
+                            minutes++;
+                            appendMinutes.innerHTML = '0' + minutes;
+                            seconds = 0;
+                            appendSeconds.innerHTML = '0' + 0;
+                        }
+                    }
+                    /*document.getElementById('minutes').innerText = mins;
+                    document.getElementById('seconds').innerText = secs;
+                    document.getElementById('tens').innerText = tens;*/
+                    
+                };
+                startBtn.onclick = () =>{
+                    clearInterval(Interval)
+                    Interval=setInterval(startTimer, 10);
+                };
+            </script>
+            </center>
+        </main> 
+        
+    </body>
+    <footer>
+        <h1> <center>Devs: Tom McLaughlin, Aden Tessman, Mason Bane <br>latest update: 10/20/2024 <br>Contact us at complaint_dept@gmail.com</center></h1>
+    </footer>
+</html>https://encrypted-tbn1.gstatic.com/licensed-im
