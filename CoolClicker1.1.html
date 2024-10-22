@@ -3,7 +3,7 @@
     <head>   
         <meta charset = "UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>XxCoolClicker!xX</title>
+        <title>XxCoolClicker(original)!xX</title>
     </head>
     
     <body style="background-color: grey;"><center>
@@ -80,16 +80,6 @@
                 max-width: 50%; 
                 height: auto;
             }
-            img2{
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                border-width: 5px; 
-                border-style: solid;
-                border-color: #333;
-                max-width: 50%; 
-                height: auto;
-            }
             body{
                 margin: 0px;
         
@@ -133,15 +123,16 @@
             <script>
                 let count = 0;
                 let lvl =1;
+                let lvlcount= 0;
 
                 function attack(){
                     count++;
-
+                    
                     if (count == lvl*10){
-                        alert("Level up!");
                         lvl++;
                         count=0;
                     }
+                                        
                     document.getElementById('counter').innerText =count;
                     document.getElementById('level').innerText = lvl;
                 }
