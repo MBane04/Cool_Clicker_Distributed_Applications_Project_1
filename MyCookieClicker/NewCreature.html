@@ -1,0 +1,234 @@
+
+<!-- 
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="view-transition" content="same-origin" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js' defer></script>
+</head>
+
+<main>
+    <center>
+        <h1 style="color: yellow;">CoolClicker!</h1>
+
+        <h2 style="color: yellow;">Here is another foul creature from Hollywood! Quickly vanquish him before he
+        </h2>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="CoolClicker1.1.html">Classic</a></li>
+                <li><a href="timed.html">Timed</a></li>
+                <li><a href="timedCompetition.html">COmpetitive</a></li>
+                <li><a href="newCelebrity.html">New Creature</a></li>
+            </ul>
+        </nav>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Alec_Baldwin_%2828246306070%29_%28cropped%29.jpg"
+            alt="AlecBaldwin" width="500" height="300">
+        <center>
+
+
+            <button onclick="attack()">Attack!</button>
+
+            <p style="color: red;">Damage Dealt: <span id="counter">0</span></p>
+            <p style="color: blue;">Level: <span id="level">0</span></p>
+            <script>
+                let count = 0;
+                let lvl = 1;
+
+                function attack() {
+                    count++;
+
+                    if (count == lvl * 10) {
+                        lvl++;
+                        count = 0;
+                    }
+
+                    document.getElementById('counter').innerText = count;
+                    document.getElementById('level').innerText = lvl;
+                }
+
+            </script>
+            <!-- Add your own photo button
+            <div id="drop-area">
+                <p>Drag & Drop your own celebrity image here</p>
+                <input type="file" id="fileElem" accept="image/*" style="display:none"
+                    onchange="handleFiles(this.files)">
+                <label class="button" for="fileElem">Select a file</label>
+            </div>
+
+            <script>
+                let dropArea = document.getElementById('drop-area');
+                let imgElement = document.querySelector('img');
+
+                // Prevent default drag behaviors
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, preventDefaults, false);
+                });
+
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                // Highlight drop area when item is dragged over it
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => dropArea.classList.add('hover'), false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => dropArea.classList.remove('hover'), false);
+                });
+
+                // Handle dropped files
+                dropArea.addEventListener('drop', handleDrop, false);
+
+                function handleDrop(e) {
+                    let dt = e.dataTransfer;
+                    let files = dt.files;
+
+                    handleFiles(files);
+                }
+
+                function handleFiles(files) {
+                    if (files.length > 0) {
+                        let file = files[0];
+                        if (file.type.startsWith('image/')) {
+                            let reader = new FileReader();
+                            reader.onload = function (event) {
+                                imgElement.src = event.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        } else {
+                            alert('Please upload an image file.');
+                        }
+                    }
+                }
+            </script>
+
+        </center>
+</main>
+
+</body>
+<footer>
+    <h1>
+        <center>Devs: Tom McLaughlin, Aden Tessman, Mason Bane <br>latest update: 10/20/2024 <br>Contact us at
+            complaint_dept@gmail.com</center>
+    </h1>
+</footer>
+
+</html>
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="view-transition" content="same-origin" />
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <script src='script.js' defer></script>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="classic.html">Classic</a></li>
+            <!--<li><a href="#">Timed</a></li>-->
+            <li><a href="competitive.html">Competitive</a></li>
+            <li class="active"><a href="NewCreature.html">New Creature</a></li>
+        </ul>
+    </nav>
+    <h1>Coconut Clicker!</h1>
+    <br>
+    <div id='container'>
+        <img id="coconut" onclick="IncrementMoney()" width="500" height="500"
+            src="https://upload.wikimedia.org/wikipedia/commons/8/88/Alec_Baldwin_%2828246306070%29_%28cropped%29.jpg"
+             alt="AlecBaldwin">
+        <h4>Money</h4>
+        <div id="scoreDisplay"></div>
+    </div>
+    <!-- Add your own photo button-->
+<div id="drop-area" class="droparea">
+    <p>Drag & Drop your own celebrity image here</p>
+    <input type="file" id="fileElem" accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+    <label class="label" for="fileElem">Select a file</label>
+</div>
+    
+    <script>
+        let dropArea = document.getElementById('drop-area');
+        let imgElement = document.querySelector('img');
+
+        // Prevent default drag behaviors
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // Highlight drop area when item is dragged over it
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => dropArea.classList.add('hover'), false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, () => dropArea.classList.remove('hover'), false);
+        });
+
+        // Handle dropped files
+        dropArea.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            let dt = e.dataTransfer;
+            let files = dt.files;
+
+            handleFiles(files);
+        }
+
+        function handleFiles(files) {
+            if (files.length > 0) {
+                let file = files[0];
+                if (file.type.startsWith('image/')) {
+                    let reader = new FileReader();
+                    reader.onload = function (event) {
+                        imgElement.src = event.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    alert('Please upload an image file.');
+                }
+            }
+        }
+    </script>
+    <div class="shop">
+        <h2>Shop</h2>
+        <div class="upgrade">
+            <span>Clicker (Cost: <span id='Clicker'> </span>)</span>
+            <button onclick="purchaseClicker()">Buy</button>
+        </div>
+        <div class="upgrade">
+            <span>Juicer (Cost: <span id='Juicer'> </span>)</span>
+            <button onclick="purchaseJuicer()">Buy</button>
+        </div>
+        <div class="upgrade">
+            <span>Crusher (Cost: <span id='Crusher'> </span>)</span>
+            <button onclick="purchaseCrusher()">Buy</button>
+        </div>
+        <div class="upgrade">
+            <span>Jackhammer (Cost: <span id='Jackhammer'> </span>)</span>
+            <button onclick="purchaseJackhammer()">Buy</button>
+        </div>
+    </div>
+</body>
+
+</html>

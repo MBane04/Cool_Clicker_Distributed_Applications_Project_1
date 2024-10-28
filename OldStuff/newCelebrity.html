@@ -159,6 +159,62 @@
                 }
                 
             </script>
+            <!-- Add your own photo button-->
+            <div id="drop-area">
+                <p>Drag & Drop your own celebrity image here</p>
+                <input type="file" id="fileElem" accept="image/*" style="display:none" onchange="handleFiles(this.files)">
+                <label class="button" for="fileElem">Select a file</label>
+            </div>
+            
+            <script>
+                let dropArea = document.getElementById('drop-area');
+                let imgElement = document.querySelector('img');
+
+                // Prevent default drag behaviors
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, preventDefaults, false);
+                });
+
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                // Highlight drop area when item is dragged over it
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => dropArea.classList.add('hover'), false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    dropArea.addEventListener(eventName, () => dropArea.classList.remove('hover'), false);
+                });
+
+                // Handle dropped files
+                dropArea.addEventListener('drop', handleDrop, false);
+
+                function handleDrop(e) {
+                    let dt = e.dataTransfer;
+                    let files = dt.files;
+
+                    handleFiles(files);
+                }
+
+                function handleFiles(files) {
+                    if (files.length > 0) {
+                        let file = files[0];
+                        if (file.type.startsWith('image/')) {
+                            let reader = new FileReader();
+                            reader.onload = function (event) {
+                                imgElement.src = event.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        } else {
+                            alert('Please upload an image file.');
+                        }
+                    }
+                }
+            </script>
+            
             </center>
         </main> 
         
