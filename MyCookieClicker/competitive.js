@@ -1,7 +1,8 @@
 var playerOnePoints = 0;
 var playerTwoPoints = 0;
 
-var coconut;
+var coconut;//coconut image
+//another change
 
 
 //add player 1 and player 2 points
