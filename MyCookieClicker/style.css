@@ -53,6 +53,18 @@ h1 {
     color: #4caf50;
 }
 
+#comp1ScoreDisplay {
+  font-size: 2em;
+  margin: 20px 0;
+  color: #4caf50;
+}
+
+#comp2ScoreDisplay {
+  font-size: 2em;
+  margin: 20px 0;
+  color: #4caf50;
+}
+
 .shop {
     margin-top: 20px;
     text-align: center;

@@ -8,7 +8,7 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='script.js' defer></script>
+    <script src='competitive.js' defer></script>
 </head>
 
 <body>
@@ -23,30 +23,13 @@
     <h1>Coconut Clicker!</h1>
     <br>
     <div id='container'>
-        <img id="coconut" onclick="IncrementMoney()" height=300px width=300px
+        <img id="coconut" onclick="addPlayerOnePoints()" height=300px width=300px
             src='https://purepng.com/public/uploads/large/purepng.com-coconutscoconutcocos-nuciferagenus-cocospalmcoconuts-1701527198754azvzr.png'
             alt="Coconut Img">
-        <h4>Money</h4>
-        <div id="scoreDisplay"></div>
-    </div>
-    <div class="shop">
-        <h2>Shop</h2>
-        <div class="upgrade">
-            <span>Clicker (Cost: <span id='Clicker'> </span>)</span>
-            <button onclick="purchaseClicker()">Buy</button>
-        </div>
-        <div class="upgrade">
-            <span>Juicer (Cost: <span id='Juicer'> </span>)</span>
-            <button onclick="purchaseJuicer()">Buy</button>
-        </div>
-        <div class="upgrade">
-            <span>Crusher (Cost: <span id='Crusher'> </span>)</span>
-            <button onclick="purchaseCrusher()">Buy</button>
-        </div>
-        <div class="upgrade">
-            <span>Jackhammer (Cost: <span id='Jackhammer'> </span>)</span>
-            <button onclick="purchaseJackhammer()">Buy</button>
-        </div>
+        <h4>Player 1 Score:</h4>
+        <div id="comp1ScoreDisplay"></div>
+        <h4>Player 2 Score:</h4>
+        <div id="comp2ScoreDisplay"></div>
     </div>
 </body>
 

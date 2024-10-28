@@ -1,10 +1,13 @@
-// money variable 
+// money & points variable 
 var playerMoney = 0;
+
+
 // Upgrade variable 
 var num_clickers = 0;
 var num_juicers = 0;
 var num_crushers = 0;
 var num_jackhammers = 0;
+
 
 var clicker_cost = 10;
 var juicer_cost = 50;
@@ -109,6 +112,7 @@ function updateDisplay() {
     document.getElementById("Crusher").innerText = crushers_cost;
     document.getElementById("Jackhammer").innerText = jackhammer_cost;
 }
+
 
 
 // start the game
