@@ -4,6 +4,14 @@ var playerTwoPoints = 0;
 var coconut;//coconut image
 //another change
 
+//keystokres for player 1 and player 2
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'a' || event.key === 'A') {
+        addPlayerOnePoints();
+    } else if (event.key === 'l' || event.key === 'L') {
+        addPlayerTwoPoints();
+    }
+});
 
 //add player 1 and player 2 points
 function addPlayerOnePoints() {
