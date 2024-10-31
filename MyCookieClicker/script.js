@@ -147,7 +147,7 @@ function purchaseGoldenHarvest() {
 
 // Do Upgrade functions 
 function ApplyClickerPoints() {
-    return (100* num_clickers);
+    return (1* num_clickers);
 }
 
 function ApplyJuicerPoints() {
